@@ -8,12 +8,11 @@ public class main {
             System.out.println("....................................................................");
             System.out.println("WELCOME TO ATM");
             System.out.println("1. ENTER YOUT PIN ");
-            System.out.println("2. NEW USER ");
-            System.out.println("3. NEW ATM CARD ACTIVATION");
-            System.out.println("4. EXIT ");
+            System.out.println("2. CONTACT BANK TO CREATE A NEW ACCOUNT");
+            System.out.println("3. EXIT ");
             System.out.println("....................................................................");
             int n = sc.nextInt();
-            if(n==4) {
+            if(n==3) {
                 break;
             }
             else if(n==1) {
