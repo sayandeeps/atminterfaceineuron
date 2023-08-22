@@ -20,7 +20,8 @@ public class main {
                 log.register();
             }
             else if(n==2) {
-
+                registration_module r =new registration_module();
+                r.register();
             }
             else {
                 System.out.println("INVALID CHOICE");
