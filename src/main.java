@@ -16,7 +16,8 @@ public class main {
                 break;
             }
             else if(n==1) {
-
+                loginmodule log = new loginmodule();
+                log.register();
             }
             else if(n==2) {
 
