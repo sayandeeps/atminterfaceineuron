@@ -1,7 +1,20 @@
 public class registration_module{
-    boolean void validregister(String name, String card, String pin){
-        return false;
-    }
+    public boolean validregister(String name, String card , String pin)
+{
+String filepath="data.txt";
+try(BufferedWriter br=new BufferedWriter(new FileWriter(filepath, append: true)))
+{
+String line= name+","+card+","+pin;
+br.write(line);
+br.newline();
+return true;
+}
+catch(Exception e)
+{
+System.out.println("!!!!!!!!!!!!!ERROR OCCURRED WHILE REGISTERATION!!!!!!!!!!!!!");
+}
+return false;
+}
     public void register(String [] args){
       Scanner sc =new Scanner(System.in);
       System.out.println("Enter you name:");
