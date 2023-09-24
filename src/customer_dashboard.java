@@ -5,18 +5,18 @@ import java.util.*;
 
 public class customer_dashboard {
 
-    public String customer;
+    String customer;
 
-    public void update() {
+    // public void update() {
 
-    }
+    // }
 
     void dashboard() throws IOException {
         String folderPath = "./data/";
         String filePath = folderPath + customer + ".txt";
         String l2 = Files.readAllLines(Paths.get(filePath)).get(0);
-        // System.out.println(customer);
-        // System.out.println(l2);
+        System.out.println(customer);
+        System.out.println(l2);
         while (true) {
             Scanner sc = new Scanner(System.in);
             System.out.println("--------------------------------");
