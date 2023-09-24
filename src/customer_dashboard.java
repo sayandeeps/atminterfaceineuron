@@ -1,6 +1,7 @@
 import java.io.IOException;
 
 public class customer_dashboard {
+    
     public String customer;
 
     public void update() {
@@ -10,8 +11,10 @@ public class customer_dashboard {
     void dashboard() throws IOException {
 
         while (true) {
+            Scanner sc = new Scanner(System.in);
             System.out.println("--------------------------------");
             System.out.println("PRESS 1 CHECK BALANCE");
+
 
             System.out.println("PRESS 2 FOR TRANSACTION HISTORY");
 
@@ -20,7 +23,10 @@ public class customer_dashboard {
             System.out.println("PRESS 4 FOR DEPOSIT");
 
             System.out.println("PRESS 5 TO EXIT");
-
+            int op=sc.nextInt();
+            if(op==1){
+                
+            }
         }
 
     }
