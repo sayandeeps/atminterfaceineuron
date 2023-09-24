@@ -91,9 +91,23 @@ public class customer_dashboard {
                     e.printStackTrace();
                 }
             }
+
             else{
                 System.out.println("Insuffisient Balance");
             }
+            }
+            else if(op==2){
+                System.out.println("--------------------------------");
+                try(BufferReader br=new BufferReader(new FileReader(filePath,true))){
+                    String line ;
+                    while((line=br.readLine())!=null){
+                        System.out.println(line);
+                        
+                    }
+                    br.close();
+                }catch(Exception e){
+                     e.printStackTrace();
+                }
             }
         }
 
