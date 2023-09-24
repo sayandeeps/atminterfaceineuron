@@ -14,9 +14,10 @@ public class customer_dashboard {
     void dashboard() throws IOException {
         String folderPath = "./data/";
         String filePath = folderPath + customer + ".txt";
-        String l2 = Files.readAllLines(Paths.get(filePath)).get(0);
+        String l2 = Files.readAllLines(Paths.get(filePath)).get(1);
         System.out.println(customer);
         System.out.println(l2);
+        int cbal = Integer.parseInt(l2);
         while (true) {
             Scanner sc = new Scanner(System.in);
             System.out.println("--------------------------------");
@@ -33,7 +34,7 @@ public class customer_dashboard {
             if (op == 5) {
                 break;
             } else if (op == 1) {
-
+                System.out.println(cbal);
             }
         }
 
