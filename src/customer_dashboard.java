@@ -1,4 +1,6 @@
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.RandomAccessFile;
@@ -70,43 +72,41 @@ public class customer_dashboard {
                     e.printStackTrace();
                 }
 
-            }
-            else if(op==3){
-                 System.out.println("--------------------------------");
-                 
+            } else if (op == 3) {
+                System.out.println("--------------------------------");
+
                 System.out.println("Enter the amount you want to withdraw");
                 int wpamt = sc.nextInt();
-                if(wpamt <= cbal){
-                cbal = cbal -wpamt;
-                update(cbal, filePath);
-                System.out.println("Amount withdrawed Successfully");
-                System.out.println("Present balance: " + cbal);
-                try (BufferedWriter br = new BufferedWriter(new FileWriter(filePath, true))) {
-                    Date currentDate = new Date();
-                    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                    String formattedDateTime = dateFormat.format(currentDate);
-                    br.write(wpamt + " Debited at " + formattedDateTime + " Available Balance: " + cbal + "\n");
+                if (wpamt <= cbal) {
+                    cbal = cbal - wpamt;
+                    update(cbal, filePath);
+                    System.out.println("Amount withdrawed Successfully");
+                    System.out.println("Present balance: " + cbal);
+                    try (BufferedWriter br = new BufferedWriter(new FileWriter(filePath, true))) {
+                        Date currentDate = new Date();
+                        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                        String formattedDateTime = dateFormat.format(currentDate);
+                        br.write(wpamt + " Debited at " + formattedDateTime + " Available Balance: " + cbal + "\n");
+                        br.close();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+
+                else {
+                    System.out.println("Insuffisient Balance");
+                }
+            } else if (op == 2) {
+                System.out.println("--------------------------------");
+                try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+                    String line;
+                    while ((line = br.readLine()) != null) {
+                        System.out.println(line);
+
+                    }
                     br.close();
                 } catch (Exception e) {
                     e.printStackTrace();
-                }
-            }
-
-            else{
-                System.out.println("Insuffisient Balance");
-            }
-            }
-            else if(op==2){
-                System.out.println("--------------------------------");
-                try(BufferReader br=new BufferReader(new FileReader(filePath,true))){
-                    String line ;
-                    while((line=br.readLine())!=null){
-                        System.out.println(line);
-                        
-                    }
-                    br.close();
-                }catch(Exception e){
-                     e.printStackTrace();
                 }
             }
         }
