@@ -1,4 +1,6 @@
 Account balance:
-10012
+9912
+
 10000 Credited at 2023-09-25 04:07:34 Available Balance: 10000
 12 Credited at 2023-09-25 04:07:48 Available Balance: 10012
+100 Debited at 2023-09-25 04:27:23 Available Balance: 9912
